@@ -1,0 +1,180 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "txtContent": "@currentField",
+  "style": {
+    "background-color": {
+      "operator": "?",
+      "operands": [
+        {
+          "operator": "<",
+          "operands": [
+            {
+              "operator": "Date()",
+              "operands": [
+                {
+                  "operator": "toDateString()",
+                  "operands": [
+                    "@currentField"
+                  ]
+                }
+              ]
+            },
+            {
+              "operator": "Date()",
+              "operands": [
+                {
+                  "operator": "toDateString()",
+                  "operands": [
+                    "@now"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "#ff0000",
+        {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                {
+                  "operator": "Date()",
+                  "operands": [
+                    {
+                      "operator": "toDateString()",
+                      "operands": [
+                        "@currentField"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "operator": "Date()",
+                  "operands": [
+                    {
+                      "operator": "toDateString()",
+                      "operands": [
+                        "@now"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "#ffa500",
+            {
+              "operator": "?",
+              "operands": [
+                {
+                  "operator": ">",
+                  "operands": [
+                    {
+                      "operator": "Date()",
+                      "operands": [
+                        {
+                          "operator": "toDateString()",
+                          "operands": [
+                            "@currentField"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "operator": "Date()",
+                      "operands": [
+                        {
+                          "operator": "toDateString()",
+                          "operands": [
+                            "@now"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "operator": "?",
+                  "operands": [
+                    {
+                      "operator": "<",
+                      "operands": [
+                        {
+                          "operator": "-",
+                          "operands": [
+                            {
+                              "operator": "Date()",
+                              "operands": [
+                                {
+                                  "operator": "toDateString()",
+                                  "operands": [
+                                    "@currentField"
+                                  ]
+                                }
+                              ]
+                            },
+                            604800000
+                          ]
+                        },
+                        {
+                          "operator": "Date()",
+                          "operands": [
+                            {
+                              "operator": "toDateString()",
+                              "operands": [
+                                "@now"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "#ffff00",
+                    ""
+                  ]
+                },
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "font-weight": {
+      "operator": "?",
+      "operands": [
+        {
+          "operator": "==",
+          "operands": [
+            {
+              "operator": "Date()",
+              "operands": [
+                {
+                  "operator": "toDateString()",
+                  "operands": [
+                    "@currentField"
+                  ]
+                }
+              ]
+            },
+            {
+              "operator": "Date()",
+              "operands": [
+                {
+                  "operator": "toDateString()",
+                  "operands": [
+                    "@now"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "bold",
+        ""
+      ]
+    }
+  }
+}
