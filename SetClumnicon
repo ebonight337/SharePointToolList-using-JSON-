@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "div",
+  "attributes": {
+    "class": "=if(@currentField == 'カテゴリ1', 'sp-field-severity--good', if(@currentField == 'カテゴリ2', 'sp-field-severity--low', if(@currentField == 'カテゴリ3', 'sp-field-severity--warning', if(@currentField == 'カテゴリ4', 'sp-field-severity--severeWarning', 'sp-field-severity--blocked')))) + ' ms-fontColor-neutralSecondary'"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "style": {
+        "display": "inline-block",
+        "padding": "0 4px"
+      },
+      "attributes": {
+        "iconName": "=if(@currentField == 'カテゴリ1', 'CheckMark', if(@currentField == 'カテゴリ2', 'Forward', if(@currentField == 'カテゴリ3', 'Error', if(@currentField == 'カテゴリ4', 'Warning', 'ErrorBadge'))))"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}
