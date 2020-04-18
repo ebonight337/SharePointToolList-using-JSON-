@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "button",
+  "customRowAction": {
+    "action": "executeFlow",
+    "actionParams": "{\"id\": \"7d103d8b-c9d0-45b9-99e4-c14fa61ef311\"}"
+  },
+  "attributes": {
+    "class": "=if(@me == [$Author.email], 'ms-fontColor-themePrimary ms-fontWeight-semibold', 'none')"
+  },
+  "style": {
+    "border": "none",
+    "background-color": "transparent",
+    "cursor": "pointer"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "=if(@me == [$Author.email] && [$Status] == 'Status1', 'Flow', '')"
+      },
+      "style": {
+        "padding-right": "6px"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "=if(@me == [$Author.email] && [$Status] == 'Status1', 'StartFlow', '')"
+    }
+  ]
+}
